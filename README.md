@@ -11,6 +11,9 @@ Status: em construção 🚧
 
 ## Versões
 
+#### Versão 0.0.2.1
+- Modularzação da interface CLI 
+
 ### Versão 0.0.2:
 - Interface CLI
 - Menu simples de comandos
