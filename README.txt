@@ -9,4 +9,17 @@ Projeto em desenvolvimento com foco em:
 
 Status: em construção 🚧
 
-    - Shilvector
+## Versões
+
+### Versão 0.0.2:
+    - Interface CLI
+    - Menu simples de comandos
+    - Validação de comandos
+    - Alteração manual de modos do sistema
+
+### Versão 0.0.1:
+    - Altera modos de maneira limitada e restrita
+
+---
+
+Desenvolvdo por Shilvector

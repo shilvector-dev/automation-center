@@ -1,3 +1,7 @@
+#Cérebro primário do Centro de Automações KhanesIA
+
+MODOS_VALIDOS = ["off", "acompanhando", "trabalhando"]
+
 class Engine:
     def __init__(self):
         self.modo = "OFF"
