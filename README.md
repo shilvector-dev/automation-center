@@ -11,6 +11,9 @@ Status: em construção 🚧
 
 ## Versões
 
+#### Versão 0.0.3
+- Padronização do código-fonte para inglês visando internacionalização futura
+
 #### Versão 0.0.2.1
 - Modularização da interface CLI 
 

@@ -1,4 +1,4 @@
-from cli.menu import iniciar_cli
+from cli.menu import start_cli
 
 if __name__ == "__main__":
-    iniciar_cli()
+    start_cli()
