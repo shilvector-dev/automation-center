@@ -13,6 +13,8 @@ Status: em construção 🚧
 
 #### Versão 0.0.3
 - Padronização do código-fonte para inglês visando internacionalização futura
+- Padronização de erros da Engine e registro para facilitar manutenção e debugging
+- Arquivo .log para registro das atividades da engine principal e percepção de erros
 
 #### Versão 0.0.2.1
 - Modularização da interface CLI 
