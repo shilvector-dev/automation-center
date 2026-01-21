@@ -12,7 +12,7 @@ Status: em construção 🚧
 ## Versões
 
 #### Versão 0.0.2.1
-- Modularzação da interface CLI 
+- Modularização da interface CLI 
 
 ### Versão 0.0.2:
 - Interface CLI
@@ -25,4 +25,4 @@ Status: em construção 🚧
 
 ---
 
-Desenvolvdo por Shilvector
+Desenvolvido por Shilvector
