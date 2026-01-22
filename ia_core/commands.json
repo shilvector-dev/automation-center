@@ -1,3 +1,12 @@
 {
-    "modes": ["off", "acompanhando", "trabalhando"]
+    "meta":{
+        "version": ["0.0.4"],
+        "descripton": ["KhanesIA automation center command schema"]
+    },
+    "modes": [
+        "off",
+        "acompanhando",
+        "trabalhando"],
+    "commands": {},
+    "obs": {}
 }
