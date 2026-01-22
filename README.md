@@ -11,6 +11,9 @@ Status: em construção 🚧
 
 ## Versões
 
+### Versão 0.0.5
+- Estruturação .json para futura implementação real de funções
+
 ### Versão 0.0.4
 - Separação correta entre lógica da Engine e comandos da interface
 - Tratamento de comandos especiais (`sair`, `voltar`) exclusivamente no menu
