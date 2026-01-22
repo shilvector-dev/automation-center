@@ -1,16 +1,20 @@
-from core.engine import Engine, VALID_MODES
-from core.errors import EngineError
 import os
+from core.engine import Engine
+from core.errors import EngineError
 
 ERROR_MESSAGES = {
-    EngineError.INVALID_MODE: f"Modo não reconhecido, modos disponíveis: {",".join(VALID_MODES)}\n",
     EngineError.MODE_ALREADY_ACTIVE: "Esse modo já está ativo. \n",
     EngineError.FILE_NOT_FOUND: "Arquivo não encontrado \n",
     EngineError.OBS_CONECTION_FALED: "Falha ao tentar conectar com o OBS Studio"
 }
 
 def start_cli():
-    eng = Engine()
+    try:
+        eng = Engine()
+    except RuntimeError:
+        print(ERROR_MESSAGES[EngineError.FILE_NOT_FOUND])
+        input("Pressione ENTER para sair...")
+        return
 
     while True:
         os.system("cls")
@@ -28,7 +32,7 @@ def start_cli():
             break
 
         else:
-            print("Opção inválida\n")
+            print("Opção inválida\n\n")
             input("Pressione ENTER para contnuar...")
 
 def menu_modes(eng):
@@ -36,13 +40,17 @@ def menu_modes(eng):
         os.system("cls")
         print(f"Status atual: {eng.get_mode()}")
         command = input("Qual o modo desejado? \n \n Resposta:").strip().lower()
-        result = eng.set_mode(command)
 
         if command in ["voltar", "sair"]:
             break
 
-        elif result:
-            print(ERROR_MESSAGES.get(result, "Erro desconhecido"))
+        result = eng.set_mode(command)
+        
+        if result:
+            if result == EngineError.INVALID_MODE:
+                print(f"Modo não reconhecido, modos disponíveis: {", ".join(eng.get_avaiable_modes())}\n")
+            else:
+                print(ERROR_MESSAGES.get(result, "Erro desconhecido"))
         else:
             print(f"Modo alterado para: {eng.get_mode()}")
             

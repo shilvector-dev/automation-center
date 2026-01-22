@@ -1,17 +1,24 @@
 from core.errors import EngineError
 import datetime as dt
 import os
-
-VALID_MODES = ["off", "acompanhando", "trabalhando"]
+import json
 
 class Engine:
     def __init__(self, default_mode="off", log_path="logs/engine.log"):
+        try:
+            with open ("ia_core/commands.json", "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except FileNotFoundError:
+            raise RuntimeError("Arquivo de comandos não encontrado")
+        
         self.mode = default_mode
         self.log_path = log_path
+        self.commands = data
+        
         os.makedirs(os.path.dirname(self.log_path), exist_ok=True)
     
     def set_mode(self, new_mode):
-        if new_mode not in VALID_MODES:
+        if new_mode not in self.commands["modes"]:
             self._log(f"Incorrect mode atemptive: {new_mode}")
             return EngineError.INVALID_MODE
         elif new_mode == self.mode:
@@ -24,6 +31,9 @@ class Engine:
     def get_mode(self):
         return self.mode
     
+    def get_avaiable_modes(self):
+        return self.commands["modes"]
+
     def _log(self, message):
         timestamp = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open(self.log_path, "a", encoding="utf-8") as f:
