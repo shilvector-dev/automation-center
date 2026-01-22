@@ -11,6 +11,13 @@ Status: em construção 🚧
 
 ## Versões
 
+### Versão 0.0.4
+- Separação correta entre lógica da Engine e comandos da interface
+- Tratamento de comandos especiais (`sair`, `voltar`) exclusivamente no menu
+- Fluxo de erros mais limpo e previsível
+- Comportamento do log corrigido para registrar apenas falhas reais de modo
+
+
 ### Versão 0.0.3
 - Padronização do código-fonte para inglês visando internacionalização futura
 - Padronização de erros da Engine e registro para facilitar manutenção e debugging
